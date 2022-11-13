@@ -9,7 +9,7 @@ def even():
     count_correct_answers = 0
     while count_correct_answers < 3:
         res = correct_answer()
-        if res:
+        if res is True:
             count_correct_answers += 1
             print("Correct!")
             if count_correct_answers == 3:
@@ -32,3 +32,4 @@ def correct_answer():
     elif number % 2 != 0:
         return (f"'{answer}' is wrong answer ;(. Correct answer was 'no'.\
                 \nLet's try again, name!")
+
