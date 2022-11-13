@@ -1,5 +1,4 @@
-#!/home/holdcarter/.poetry.venv/bin python3
-
+#!/usr/bin/env python3
 from cli import welcome_user
 
 

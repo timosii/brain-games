@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from random import randint
 from cli import welcome_user
 
@@ -32,4 +33,3 @@ def correct_answer():
     elif number % 2 != 0:
         return (f"'{answer}' is wrong answer ;(. Correct answer was 'no'.\
                 \nLet's try again, name!")
-

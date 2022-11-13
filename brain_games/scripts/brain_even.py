@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from even_logic import even
 
 

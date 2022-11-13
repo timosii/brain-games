@@ -4,7 +4,9 @@ version = "0.1.0"
 description = ""
 authors = ["HoldCarter <holdcarter@holdcarter.ru>"]
 readme = "README.md"
-packages = [{include = "brain_games" }]
+packages = [
+  { include = "brain_games" },
+]
 
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
