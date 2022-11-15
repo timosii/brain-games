@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from brain_games.games.even_logic import even
+from brain_games.games.even import even
 
 
 def main():
