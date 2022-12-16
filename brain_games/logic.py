@@ -17,4 +17,5 @@ def correct(name, count_correct_answers):
 
 
 def wrong_answer(answer, correct_answer, name):
-    print(f"'{answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.\nLet's try again, {name}!")
+    print(f"'{answer}' is wrong answer ;(." +
+          f"Correct answer was '{correct_answer}'.\nLet's try again, {name}!")

@@ -18,7 +18,6 @@ def operation():
     print(f"Question: {number1} {selection} {number2}")
     answer = input("Your answer: ")
     correct_answer = str(eval(f"{number1}{selection}{number2}"))
-    
     return (compare(answer, correct_answer))
 
 
@@ -28,9 +27,8 @@ def result(name, count_correct_answers):
         tmp = correct(name, count_correct_answers)
         try:
             result(name, tmp)
-        except:
+        except Exception:
             print(tmp)
 
     else:
         return (wrong_answer(answer, correct_answer, name))
-
