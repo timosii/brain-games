@@ -1,38 +1,35 @@
 from random import randint
 from brain_games.cli import welcome_user
+from brain_games.logic import compare, correct, wrong_answer
 
-
-def even():
+def even_start():
     name = welcome_user()
     print("Answer 'yes' if number is even, otherwise answer 'no'")
-    result = correct(name)
-    print(result)
-
-
-def correct(name):
     count_correct_answers = 0
-    while count_correct_answers < 3:
-        res = correct_answer(name)
-        if res is True:
-            count_correct_answers += 1
-            print("Correct!")
-            if count_correct_answers == 3:
-                return (f'Congratulations, {name}!')
-        else:
-            return res
-            break
-                     
+    return (result(name, count_correct_answers))
 
-def correct_answer(name):
+
+def operation():
     number = randint(1, 100)
     print(f"Question: {number}")
     answer = input("Your answer: ").lower()
-    if ((answer == 'yes' and number % 2 == 0) or
-            (answer == 'no' and number % 2 != 0)):
-        return True
-    elif number % 2 == 0:
-        return (f"'{answer}' is wrong answer ;(. Correct answer was 'yes'.\
-                \nLet's try again, {name}!")
-    elif number % 2 != 0:
-        return (f"'{answer}' is wrong answer ;(. Correct answer was 'no'.\
-                \nLet's try again, {name}!")
+    
+    if number % 2 == 0:
+        correct_answer = 'yes'
+    else:
+        correct_answer = 'no'
+    
+    return (compare(answer, correct_answer))
+        
+
+def result(name, count_correct_answers):
+    compare, correct_answer, answer = operation()
+    if compare:
+        tmp = correct(name, count_correct_answers)
+        try:
+            result(name, tmp)
+        except:
+            print(tmp)
+            
+    else:
+        return (wrong_answer(answer, correct_answer, name))

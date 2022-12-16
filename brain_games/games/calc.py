@@ -1,37 +1,36 @@
 from random import randint, choice
 from brain_games.cli import welcome_user
+from brain_games.logic import compare, correct, wrong_answer
 
 
-def calc():
+def calc_start():
     name = welcome_user()
     print("What is the result of the expression?")
-    result = correct(name)
-    print(result)
-
-
-def correct(name):
     count_correct_answers = 0
-    while count_correct_answers < 3:
-        res = correct_answer(name)
-        if res is True:
-            count_correct_answers += 1
-            print("Correct!")
-            if count_correct_answers == 3:
-                return (f'Congratulations, {name}!')
-        else:
-            return res
-            break
+    return (result(name, count_correct_answers))
 
 
-def correct_answer(name):
+def operation():
     number1 = randint(1, 35)
     number2 = randint(1, 35)
     list_oper = ["*", "-", "+"]
-    operation = choice(list_oper)
-    print(f"Question: {number1} {operation} {number2}")
+    selection = choice(list_oper)
+    print(f"Question: {number1} {selection} {number2}")
     answer = input("Your answer: ")
-    result = eval(f"{number1}{operation}{number2}")
-    if str(answer) == str(result):
-        return True
+    correct_answer = str(eval(f"{number1}{selection}{number2}"))
+    
+    return (compare(answer, correct_answer))
+
+
+def result(name, count_correct_answers):
+    compare, correct_answer, answer = operation()
+    if compare:
+        tmp = correct(name, count_correct_answers)
+        try:
+            result(name, tmp)
+        except:
+            print(tmp)
+
     else:
-        return (f"'{answer}' is wrong answer ;(. Correct answer was '{result}'.\nLet's try again, {name}!")
+        return (wrong_answer(answer, correct_answer, name))
+
