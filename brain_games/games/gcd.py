@@ -13,7 +13,7 @@ def gcd_start():
 def operation():
     number1 = randint(1, 100)
     number2 = randint(1, 100)
-    print(f"Question:{number1} {number2}")
+    print(f"Question: {number1} {number2}")
     answer = input("Your answer: ")
     list_numbers = sorted([number1, number2])
     num_min, num_max = list_numbers[0], list_numbers[1]
