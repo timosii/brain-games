@@ -5,7 +5,7 @@ from brain_games.logic import compare, correct, wrong_answer
 
 def even_start():
     name = welcome_user()
-    print('Answer "yes" if number is even, otherwise answer "no"')
+    print('Answer "yes" if number is even, otherwise answer "no".')
     count_correct_answers = 0
     return (result(name, count_correct_answers))
 
