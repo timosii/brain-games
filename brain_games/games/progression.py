@@ -20,7 +20,7 @@ def operation():
     progression[index_progression] = '..'
     progression = ' '.join(map(str, progression))
     progression_correct = list(range(start, finish + step, step))
-    print(f"Question:{progression}")
+    print(f"Question: {progression}")
     answer = input("Your answer: ")
     correct_answer = str(progression_correct[index_progression])
     return (compare(answer, correct_answer))
