@@ -1,6 +1,6 @@
 from random import randint
 from brain_games.cli import welcome_user
-from brain_games.logic import compare, correct, wrong_answer
+from brain_games.common_part import compare, correct, wrong_answer
 
 
 def even_start():
