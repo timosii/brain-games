@@ -8,6 +8,7 @@ The CLI-utility where you can play 5 simple math games.
 ## Installation
 ```
 git clone git@github.com:timosii/brain-games.git
+cd brain-games
 make build
 make package-install
 ```
